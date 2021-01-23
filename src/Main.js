@@ -7,23 +7,23 @@ import {
 import Home from "./Home";
 import Stuff from "./Stuff";
 import Contact from "./Contact";
-import sign from "./Sign"
-
+import sign from "./Sign";
+import Map from "./Mapp"
 
 
 class Main extends Component {
 
     constructor(){
         super();
-        this.state={ title:"reawt state",};
+        this.state={ Sign:"sign",};
     }
     toogleTitle =() => {
 
-if (this.state.title === '') {
+if (this.state.Sign === '') {
 
-    this.setState({ title:'react state'});
+    this.setState({ Sign:'formulaire'});
 }else {
-    this.setState({ title:''});
+    this.setState({ Sign:''});
 }
     }
   
@@ -35,17 +35,11 @@ if (this.state.title === '') {
 
         <HashRouter>
             <div> 
-                <input type="checkbox" id="showTitle" onClick={this.toogleTitle} defaultChecked />
-                <label htmlFor="showTitle"> show title</label>
+                <input type="checkbox" id="Signin" onClick={this.toogleTitle} defaultChecked />
+                <label htmlFor="Signin"> show Sign</label>
                
                 </div>
-                <h2> {this.state.title}</h2>
-
-                <div>
-                    <ul>
-                        <li>< NavLink to="/sign">SignUp</ NavLink></li>
-                    </ul>
-                    </div>
+                
             
         <div>
             <h1> Simple SPA</h1>
@@ -53,10 +47,15 @@ if (this.state.title === '') {
                 <li><NavLink to="/"> Home</NavLink></li>
                 <li><NavLink to="/stuff"> Stuff</NavLink></li>
                 <li><NavLink to="/contact"> Contact</NavLink></li>
+                <li>< NavLink to="/map">Map</ NavLink></li>
+                <h2> {this.state.Sign}</h2>
+
+               
+                
             </ul>
             <div>
                     <ul>
-                        <li>< NavLink to="/map">Map</ NavLink></li>
+                        
                     </ul>
                     </div>
             <div className ="content">
